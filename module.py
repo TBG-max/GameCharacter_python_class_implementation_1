@@ -10,10 +10,13 @@ class GameCharacter:
 
     def attack(self):
         return f"{self.name} attacks with power {self.power}!"
-
+             
     def take_damage(self, amount):
         self.health -= amount
+        if (self.health <= 0):
+         print(f"{self.name} has been defeated!")
         return f"{self.name} takes {amount} damage."
+        
 
     def heal(self, amount):
         self.health += amount
